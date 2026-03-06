@@ -1,0 +1,19 @@
+RELEASE: v1.0
+TITLE: Capacity Conditioned Continuation in Resource Constrained Activity Networks
+AUTHOR: J. M. Bookbinder
+AFFILIATION: Witness Grade Analytics, Atlanta, GA, USA
+DATE_LOCAL: 2026-03-06
+TAG: v1.0
+COMMIT: b6e6271e2aa591cdee350857f4f630a7e713b68c
+
+CONTENTS:
+- Initial publication packet
+- Source manuscript
+- SHA256 receipts
+- SEAL record
+- MANIFEST
+- MANIFEST_HASHES
+- Tarball publication packet
+
+PUBLIC_REPOSITORY:
+https://github.com/mosesbookbinder-web/capacity-conditioned-continuation
