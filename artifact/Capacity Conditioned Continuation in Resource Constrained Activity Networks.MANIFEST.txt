@@ -1,0 +1,9 @@
+MANIFEST: Capacity Conditioned Continuation in Resource Constrained Activity Networks
+AUTHOR: J. M. Bookbinder
+DATE_UTC: 2026-03-06T16:59:19Z
+
+FILES:
+- Capacity Conditioned Continuation in Resource Constrained Activity Networks.txt
+- Capacity Conditioned Continuation in Resource Constrained Activity Networks.txt.sha256
+- Capacity Conditioned Continuation in Resource Constrained Activity Networks.SEAL.txt
+- Capacity Conditioned Continuation in Resource Constrained Activity Networks.SEAL.txt.sha256

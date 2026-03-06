@@ -1,0 +1,116 @@
+Capacity Conditioned Continuation in Resource Constrained Activity Networks
+J. M. Bookbinder
+Witness Grade Analytics
+Atlanta, GA, USA
+ 
+Abstract
+Classical activity network analysis (e.g., CPM/PERT) evaluates feasibility primarily through precedence logic, implicitly assuming unlimited resource availability. Under this assumption, independent paths may execute concurrently and slack is determined solely by path length differences. In practice, execution occurs under finite shared operator capacity, and precedence feasible schedules may fail to be executable.
+This paper demonstrates a structural threshold phenomenon in a simple activity network: when the capacity of a shared operator falls below a critical level, previously independent paths become resource coupled, slack collapses, and simultaneous criticality emerges. When capacity is restored above the threshold, path independence and slack are recovered. The transition is non incremental (discontinuous in capacity) and arises from the interaction between network topology and shared resource capacity rather than from changes in precedence structure.
+
+The results show that executable continuation is governed by capacity conditioned structural admissibility rather than precedence logic alone.
+ 
+Keywords
+Activity networks; resource constrained scheduling; structural admissibility; capacity thresholds; critical paths
+ 
+1. Introduction
+Activity network methods such as CPM and PERT assess feasibility through logical reachability under precedence constraints. In this framework, activities not linked by precedence relations are assumed to be executable in parallel, and slack reflects differences in path durations.
+While effective for precedence analysis, this abstraction neglects the finite capacity of shared operators such as crews, machines, or specialized equipment. When multiple activities require the same operator, concurrency implied by precedence logic may be infeasible in execution.
+As a result, a process network may remain logically reachable while failing to admit a feasible execution under resource constraints. This distinction has structural parallels in communication switching systems, where connectivity alone does not guarantee non blocking continuation under finite internal capacity (Clos, 1953).
+This paper examines that distinction and demonstrates a capacity threshold at which network behavior undergoes a structural regime change.
+ 
+2. Feasibility and Structural Admissibility
+Two notions of feasibility are distinguished.
+Precedence feasibility.
+Existence of a schedule that satisfies all precedence constraints under the assumption of unlimited resources.
+Structural admissibility.
+Existence of an execution that satisfies precedence constraints while respecting finite shared operator capacities.
+Precedence feasibility is therefore necessary but not sufficient for execution under resource constraints. Structural inadmissibility may arise even when no precedence constraints are violated.
+ 
+3. Demonstration Network
+Consider the activity network shown in Figure 1.
+Two major paths exist:
+Path 1:
+A → C → I → J → K
+Total duration: 18
+Path 2:
+B → G → H
+Total duration: 14
+Under unlimited resources:
+•	Both paths execute independently
+•	The B–G–H branch retains 4 units of slack
+•	Only Path 1 is critical
+The network is precedence feasible under unlimited resources.
+ 
+4. Shared Operator Constraints
+Two shared operators are introduced.
+Operator	Required by
+Crane	C, G
+Bulldozer	E, F
+Four capacity regimes are examined.
+Crane	Bulldozer	Regime Description
+2	2	Precedence bound
+1	2	Crane limited
+2	1	Bulldozer limited
+1	1	Fully constrained
+Only the crane is shared across the two major branches; the bulldozer operates within a local substructure.
+ 
+5. Stress Test Under Delay
+To evaluate robustness, delays are introduced:
+•	Activity A: +2
+•	Activity B: +4
+Observed outcomes are summarized in Table 1.
+Table 1 — Execution outcomes under capacity constraints
+Crane	Bulldozer	Finish Time	Slack (B–G–H)
+2	2	20	2
+1	2	20	0
+2	1	20	2
+1	1	20	0
+Reducing bulldozer capacity produces only local effects. Reducing crane capacity eliminates slack on the shorter path and induces dual criticality.
+ 
+6. Capacity Threshold and Structural Coupling
+When crane capacity is reduced from two units to one, activities C and G can no longer execute concurrently. This forces serialization between the two major paths and consumes the slack previously present on the shorter path.
+The transition is non incremental.
+Above the threshold:
+•	Paths remain independent
+•	Slack persists
+•	Execution is resilient to perturbation
+Below the threshold:
+•	Paths become resource coupled
+•	Slack collapses
+•	Execution operates at zero margin
+This behavior constitutes a capacity threshold phenomenon arising from network topology and shared operator placement.
+ 
+7. Capacity Conditioned Admissibility Principle
+The observations support the following structural principle.
+Capacity Conditioned Admissibility Principle.
+A process network may be logically reachable yet structurally inadmissible for execution under finite shared operator capacity. When the capacity of a shared operator falls below a critical threshold determined by network topology and concurrent demand, previously independent paths become resource coupled, slack is exhausted, and resource induced criticality emerges. When capacity is restored above the threshold, path independence and slack are restored.
+The threshold arises from the interaction of:
+1.	network topology
+2.	placement of shared operators
+3.	operator capacity relative to concurrent demand
+ 
+8. Implications
+Three implications follow.
+Limits of precedence only analysis.
+Logical reachability may overstate executable feasibility by implicitly assuming concurrency that cannot occur under finite capacity.
+Operator centrality.
+Shared operators located on cutsets separating major branches govern global continuation behavior.
+Discontinuous risk.
+Small capacity reductions can produce abrupt loss of slack and system resilience.
+ 
+9. Conclusion
+Executable continuation in activity networks is governed not by logical reachability alone but by capacity conditioned structural admissibility.
+Shared operator capacity determines whether independent paths remain independent or collapse into coupled execution. The demonstrated threshold phenomenon shows that feasibility is a structural property of the combined network–resource system.
+Precedence feasible schedules may therefore become inadmissible when resource capacity falls below critical levels, even though the network structure itself remains unchanged.
+ 
+Figure Caption
+Figure 1. Capacity threshold phenomenon in a resource constrained activity network.
+(a) Under sufficient crane capacity, the two major branches execute independently and the shorter path retains slack.
+(b) When crane capacity is limited to one unit, activities C and G cannot execute concurrently.
+(c) Serialization collapses slack on the shorter path and produces simultaneous criticality, demonstrating a transition from precedence bound to resource coupled execution.
+ 
+References
+Clos, C. (1953).
+A Study of Non Blocking Switching Networks.
+Bell System Technical Journal, 32(2), 406–424.
+
